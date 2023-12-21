@@ -11,23 +11,36 @@ const Navbar = () => {
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Inbox</MenubarTrigger>
+        <MenubarTrigger>
+          {" "}
+          <Link to={"/"}>Inbox </Link>
+        </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Notifications</MenubarTrigger>
+        <MenubarTrigger>
+          <Link to={"/"}>Notifications</Link>
+        </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>About</MenubarTrigger>
+        <MenubarTrigger>
+          <Link to={"/"}>About</Link>
+        </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Contact</MenubarTrigger>
+        <MenubarTrigger>
+          <Link to={"/"}>Contact</Link>
+        </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Join</MenubarTrigger>
+        <MenubarTrigger>
+          <Link to={"/"}>Join</Link>
+        </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger className="w-full">
-          <TiShoppingCart className="text-3xl" />
+          <Link to={"/"}>
+            <TiShoppingCart className="text-3xl" />
+          </Link>
         </MenubarTrigger>
       </MenubarMenu>
     </Menubar>
