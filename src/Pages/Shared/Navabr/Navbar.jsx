@@ -12,8 +12,7 @@ const Navbar = () => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          {" "}
-          <Link to={"/"}>Inbox </Link>
+          <Link to={"/inbox"}>Inbox </Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
@@ -23,12 +22,12 @@ const Navbar = () => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          <Link to={"/"}>About</Link>
+          <Link to={"/about"}>About</Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          <Link to={"/"}>Contact</Link>
+          <Link to={"/contact"}>Contact</Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
@@ -38,7 +37,7 @@ const Navbar = () => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger className="w-full">
-          <Link to={"/"}>
+          <Link to={"/cart"}>
             <TiShoppingCart className="text-3xl" />
           </Link>
         </MenubarTrigger>
