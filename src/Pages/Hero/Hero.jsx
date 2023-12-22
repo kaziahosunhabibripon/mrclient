@@ -2,10 +2,15 @@ import React from "react";
 import Banner from "../../assets/Source/Web Banner 1.svg";
 const Hero = () => {
   return (
-    <div className="relative isolate ">
+    <div className="relative isolate font-montserrat">
       <div className="mx-auto">
-        <div className="absolute top-[10%] left-[28%] transform -translate-x-1/2 -translate-y-1/2 text-4xl font-bold ">
-          <h1 className="text-[#1B8CDC]">Musfiqurraham535</h1>
+        <div className="absolute flex items-center flex-col top-[17%] left-[30%] transform -translate-x-1/2 -translate-y-1/2">
+          <h1 className="text-[#1B8CDC] text-4xl font-medium">
+            Mahfujurrahm535
+          </h1>
+          <h1 className="text-[#4e4d4d] px-8 text-2xl font-normal">
+            Graphic Designer
+          </h1>
         </div>
 
         <img
