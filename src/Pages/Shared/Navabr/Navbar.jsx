@@ -17,7 +17,7 @@ const Navbar = () => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          <Link to={"/notifications"}>Notifications</Link>
+          <Link to={"/"}>Notifications</Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
@@ -37,7 +37,7 @@ const Navbar = () => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger className="w-full">
-          <Link to={"/"}>
+          <Link to={"/cart"}>
             <TiShoppingCart className="text-3xl" />
           </Link>
         </MenubarTrigger>
