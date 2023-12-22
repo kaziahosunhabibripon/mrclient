@@ -17,28 +17,6 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-<<<<<<< HEAD
-        element: <Root />,
-        errorElement: <div>404</div>,
-        children: [
-            {
-                path: "/",
-                element: <Home />
-            }
-        ]
-    },
-    {
-        path: "/authentication",
-        element: <Auth />,
-        children: [
-            {
-                path: "/authentication",
-                element: <Authentication />
-            }
-        ]
-    }
-])
-=======
         element: <Home />,
       },
       {
@@ -59,7 +37,17 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "/authentication",
+    element: <Auth />,
+    children: [
+      {
+        path: "/authentication",
+        element: <Authentication />,
+      },
+    ],
+  },
 ]);
->>>>>>> ea3ac089a041ff3579deed919beeeb528111328e
 
 export default router;
