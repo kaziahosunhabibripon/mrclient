@@ -19,14 +19,14 @@ const HeaderBottom = () => {
         <NavigationMenu>
           <NavigationMenuList className="text-center">
             <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
+              <Link href="/docs">
                 <NavigationMenuLink className="bg-transparent text-white p-2">
                   Upload
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
+              <Link href="/docs">
                 <NavigationMenuLink className="bg-transparent text-white p-2">
                   Dashboard
                 </NavigationMenuLink>
@@ -109,8 +109,6 @@ const HeaderBottom = () => {
             <NavigationMenuItem>
               <NavigationMenuLink
                 href="/docs"
-                legacyBehavior
-                passHref
                 className="text-white p-2"
               >
                 Price List
@@ -119,8 +117,6 @@ const HeaderBottom = () => {
             <NavigationMenuItem>
               <NavigationMenuLink
                 href="/docs"
-                legacyBehavior
-                passHref
                 className="text-white p-2"
               >
                 Project
@@ -129,8 +125,6 @@ const HeaderBottom = () => {
             <NavigationMenuItem>
               <NavigationMenuLink
                 href="/docs"
-                legacyBehavior
-                passHref
                 className="text-white p-2"
               >
                 Analytics

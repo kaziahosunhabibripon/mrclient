@@ -33,7 +33,7 @@ const Navbar = () => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          <Link to={"/"}>Join</Link>
+          <Link to={"/authentication"}>Join</Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
