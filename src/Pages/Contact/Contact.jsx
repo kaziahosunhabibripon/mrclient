@@ -45,7 +45,7 @@ const Contact = () => {
 
               <div className="flex items-center justify-between">
                 <Textarea
-                  placeholder="Tell us a little bit about yourself"
+                  placeholder="Message"
                   className="resize-none rounded-none"
                 />
               </div>
