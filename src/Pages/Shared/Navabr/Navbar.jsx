@@ -12,23 +12,22 @@ const Navbar = () => {
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          {" "}
-          <Link to={"/"}>Inbox </Link>
+          <Link to={"/inbox"}>Inbox </Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          <Link to={"/"}>Notifications</Link>
+          <Link to={"/notifications"}>Notifications</Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          <Link to={"/"}>About</Link>
+          <Link to={"/about"}>About</Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
         <MenubarTrigger>
-          <Link to={"/"}>Contact</Link>
+          <Link to={"/contact"}>Contact</Link>
         </MenubarTrigger>
       </MenubarMenu>
       <MenubarMenu>
