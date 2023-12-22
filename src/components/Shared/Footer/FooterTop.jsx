@@ -3,7 +3,7 @@ import React from "react";
 
 const FooterTop = () => {
   return (
-    <div>
+    <>
       <div className="flex gap-8">
         <div className="flex-shrink-0 mr-4">
           <div className="px-8">
@@ -18,28 +18,24 @@ const FooterTop = () => {
             </h1>
           </div>
         </div>
-
         <div className="text-white flex justify-center gap-4 flex-1">
           <div className="p-1">
             <div className="p-1">Home</div>
             <div className="p-1 border-b-2 border-gray pb-4">About</div>
           </div>
         </div>
-
         <div className="text-white flex justify-center gap-4 flex-1">
           <div className="p-1">
             <div className="p-1">Designs</div>
             <div className="p-1">Companies</div>
           </div>
         </div>
-
         <div className="text-white flex justify-center gap-4 flex-1">
           <div className="p-1">
             <div className="p-1">Price List</div>
             <div className="p-1">Project</div>
           </div>
         </div>
-
         <div className="text-white flex justify-center gap-4 flex-1">
           <div className="p-1">
             <div className="p-1">Contact</div>
@@ -47,7 +43,7 @@ const FooterTop = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
