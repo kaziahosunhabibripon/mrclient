@@ -22,7 +22,7 @@ const About = () => {
           <div className="mb-10">
             <h4 className="text-[#1C91E4] text-xl mb-5 font-semibold">What kind of designs do we like to create?</h4>
 
-            <div className="border-l-2 border-teal-600 pl-10">
+            <div className="border-l-2 border-[#0E97A1] pl-10">
               <p className="mb-5">We like to create all kinds of business advertising designs. Print design and social media post design. Most of the designs we create.</p>
 
               <ul className="grid font-montserrat grid-cols-2 gap-1 mt-1">
@@ -148,7 +148,7 @@ const About = () => {
           <div className="mb-10">
             <h4 className="text-[#1C91E4] text-xl mb-5 font-semibold">Why should you choose us for your design?</h4>
 
-            <div className="border-l-2 border-teal-600 pl-10">
+            <div className="border-l-2 border-[#0E97A1] pl-10">
               <p>
                 We create every design for a specific business. Due to this the
                 contents of each of our designs are of the right quality. After
@@ -172,7 +172,7 @@ const About = () => {
           <div>
             <h4 className="text-[#1C91E4] text-xl mb-5 font-semibold">What are our future plans?</h4>
 
-            <div className="border-l-2 border-teal-600 pl-10">
+            <div className="border-l-2 border-[#0E97A1] pl-10">
               <p>Our main goal is to create advertising
                 designs for different types of businesses. We have already created
                 many types of advertising designs. We will create more different
