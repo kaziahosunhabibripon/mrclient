@@ -2,6 +2,7 @@ import Auth from "@/Layout/Auth";
 import Root from "@/Layout/Root";
 import Authentication from "@/Pages/Authentication/Authentication";
 import Home from "@/Pages/Home/Home";
+import PrivacyPolicy from "@/Pages/PrivacyPolicy/PrivacyPolicy";
 import TermsConditions from "@/Pages/TermsConditions/TermsConditions";
 import About from "@/pages/About/About";
 import Cart from "@/pages/Cart/Cart";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/terms-conditions",
         element: <TermsConditions />
+      },
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy />
       }
     ],
   },
