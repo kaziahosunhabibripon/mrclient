@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../Shared/Container";
 import { Link } from "react-router-dom";
-
+import { GiCheckMark } from "react-icons/gi";
 const About = () => {
   return (
     <div>
@@ -25,32 +25,128 @@ const About = () => {
               <h4 className="text-[#1C91E4] text-xl py-4 font-medium">
                 What kind of designs do we like to create?
               </h4>
-              <p>
-                We like to create all kinds of business advertising designs.
-                Print design and social media post design. Most of the designs
-                we create.
-                <ul>
-                  <li> ✓ Door Hanger Design</li>
-                  <li> ✓ Flyer Design </li>
-                  <li> ✓ Postcard Design </li>
-                  <li> ✓ Poster Design </li>
-                  <li> ✓ Rack Card Design </li>
-                  <li> ✓ Business Card Design </li>
-                  <li> ✓ Brochure Design</li>
-                  <li> ✓ Social Media Post Design </li>
-                  <li> ✓ Facebook Cover Design </li>
-                  <li> ✓ Billboard Design </li>
-                  <li> ✓ Yard Sign Design </li>
-                  <li> ✓ Roll-up Banner Design </li>
-                  <li> ✓ Sidewalk Sign Design</li>
-                  <li> ✓ Trade Show Banner Design </li>
-                  <li> ✓ Menu Design</li>
-                  <li> ✓ Magazine Cover Design </li>
-                  <li> ✓ Magazine Ads Design </li>
-                  <li> ✓ Book Cover Design</li>
-                  <li> ✓ Podcast Cover Design </li>
-                  <li> ✓ And Much More </li>
-                </ul>
+              <p className="border-l-2 border-[#1C91E4] px-4">
+                <div className="mx-4 font-montserrat">
+                  We like to create all kinds of business advertising designs.
+                  Print design and social media post design. Most of the designs
+                  we create.
+                  <ul className="grid grid-cols-2 gap-1 mt-1">
+                    <li className="flex items-left mt-1">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Door Hanger Design
+                      </span>
+                    </li>
+                    <li className="flex items-left  mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Postcard Design
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">Flyer Design</span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Rack Card Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Poster Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Business Card Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Brochure Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Social Media Post Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Facebook Cover Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Billboard Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Yard Sign Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Roll-up Banner Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Sidewalk Sign Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Trade Show Banner Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">Menu Design </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Magazine Cover Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Magazine Ads Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Book Cover Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">
+                        Podcast Cover Design{" "}
+                      </span>
+                    </li>
+                    <li className="flex items-left mt-[1px]">
+                      <GiCheckMark className="text-[#1C91E4] mr-2" />
+                      <span className="font-medium text-md">And Much More</span>
+                    </li>
+                  </ul>
+                </div>
               </p>
             </div>
             <h1 className="text-[#1C91E4] text-xl py-4 font-medium">

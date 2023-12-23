@@ -107,26 +107,17 @@ const HeaderBottom = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/docs"
-                className="text-white p-2"
-              >
+              <NavigationMenuLink href="/price" className="text-white p-2">
                 Price List
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/docs"
-                className="text-white p-2"
-              >
+              <NavigationMenuLink href="/project" className="text-white p-2">
                 Project
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink
-                href="/docs"
-                className="text-white p-2"
-              >
+              <NavigationMenuLink href="/analytics" className="text-white p-2">
                 Analytics
               </NavigationMenuLink>
             </NavigationMenuItem>
