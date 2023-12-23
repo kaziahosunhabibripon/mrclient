@@ -4,8 +4,16 @@ import { Label } from "@radix-ui/react-menubar";
 import React from "react";
 import Creatable from "react-select/creatable";
 import { useForm } from "react-hook-form";
+import { createUser } from "@/redux/features/users/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Register = () => {
+  const { email, name, isLoading } = useSelector((state) => state.userSlice);
+
+  console.log(email, name);
+
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -14,9 +22,13 @@ const Register = () => {
   } = useForm();
 
   const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    const { name, email, password } = data;
+    dispatch(createUser({ email, password, name }));
+  };
+
   return (
     <>
       <form
@@ -49,7 +61,7 @@ const Register = () => {
 
         <div>
           <Label>Full Name</Label>
-          <Input {...register("name", { required: true })} />
+          <Input type="text" {...register("name", { required: true })} />
           {errors.name && (
             <span className="text-red-500">This field is required</span>
           )}
@@ -57,7 +69,7 @@ const Register = () => {
 
         <div>
           <Label>Username</Label>
-          <Input {...register("username", { required: true })} />
+          <Input type="text" {...register("username", { required: true })} />
           {errors.username && (
             <span className="text-red-500">This field is required</span>
           )}
@@ -66,13 +78,9 @@ const Register = () => {
         <div>
           <Label>Email</Label>
           <Input
+            type="email"
             {...register("email", {
               required: true,
-              pattern: {
-                value: passwordRegex,
-                message:
-                  "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.",
-              },
             })}
           />
           {errors.email && (
@@ -80,19 +88,33 @@ const Register = () => {
           )}
         </div>
 
-        <div>
-          <Label>Set Password</Label>
-          <Input {...register("password", { required: true })} />
-          {errors.password && (
-            <span className="text-red-500">This field is required</span>
-          )}
-        </div>
+        <Input
+          type="password"
+          {...register("password", {
+            required: "Password is required",
+            pattern: {
+              value: {
+                source: passwordRegex.source,
+                flags: passwordRegex.flags,
+              },
+              message:
+                "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.",
+            },
+          })}
+        />
 
         <div>
           <Label>Confirm Password</Label>
-          <Input {...register("confirmPass", { required: true })} />
+          <Input
+            type="password"
+            {...register("confirmPass", {
+              required: "Confirmation password is required",
+              validate: (value) =>
+                value === watch("password") || "Passwords do not match",
+            })}
+          />
           {errors.confirmPass && (
-            <span className="text-red-500">This field is required</span>
+            <span className="text-red-500">{errors.confirmPass.message}</span>
           )}
         </div>
 
