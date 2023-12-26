@@ -7,8 +7,10 @@ import { app } from '@/firebase/firebase.config';
 import { createUser } from '@/redux/features/users/userSlice';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { usePostAdminUserMutation } from '@/redux/features/adminUser/adminUserApi';
 
 const AdminRegister = () => {
+    const [createAdminUser] = usePostAdminUserMutation();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const fileRef = useRef(null);
     const [image, setImage] = useState(undefined);
@@ -53,8 +55,9 @@ const AdminRegister = () => {
         // Handle form submission with the form data
         dispatch(createUser({ email, password, name, image: imageURL }));
 
-        const newUser = { name, email, password, image: imageURL, address, phoneNumber };
-        console.log(newUser);
+        const newUser = { name, email, password, image: imageURL, address, number: phoneNumber };
+        
+        createAdminUser(newUser);
 
         setImageURL("");
         reset();
