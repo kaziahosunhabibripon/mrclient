@@ -28,7 +28,7 @@ const SocialMedia = () => {
 
                             {/* Facebook Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="facebook" className="block mb-1 text-sm md:text-base font-normal">Facebook</label>
+                                <label htmlFor="facebook" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Facebook</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <TiSocialFacebookCircular className='text-gray-500 text-2xl' />
@@ -45,7 +45,7 @@ const SocialMedia = () => {
 
                             {/* Instagram Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="instagram" className="block mb-1 text-sm md:text-base font-normal">Instagram</label>
+                                <label htmlFor="instagram" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Instagram</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <FaInstagram className='text-gray-500 text-xl' />
@@ -62,7 +62,7 @@ const SocialMedia = () => {
 
                             {/* Linkedin Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="linkedin" className="block mb-1 text-sm md:text-base font-normal">Linkedin</label>
+                                <label htmlFor="linkedin" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Linkedin</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <TiSocialLinkedinCircular className='text-gray-500 text-2xl' />
@@ -79,7 +79,7 @@ const SocialMedia = () => {
 
                             {/* Twitter Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="twitter" className="block mb-1 text-sm md:text-base font-normal">Twitter</label>
+                                <label htmlFor="twitter" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Twitter</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <TiSocialTwitterCircular className='text-gray-500 text-2xl' />
@@ -96,7 +96,7 @@ const SocialMedia = () => {
 
                             {/* Pinterest Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="pinterest" className="block mb-1 text-sm md:text-base font-normal">Pinterest</label>
+                                <label htmlFor="pinterest" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Pinterest</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <TiSocialPinterestCircular className='text-gray-500 text-2xl' />
@@ -113,7 +113,7 @@ const SocialMedia = () => {
 
                             {/* Google Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="google" className="block mb-1 text-sm md:text-base font-normal">Google</label>
+                                <label htmlFor="google" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Google</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <TiSocialGooglePlusCircular className='text-gray-500 text-2xl' />
@@ -130,7 +130,7 @@ const SocialMedia = () => {
 
                             {/* Youtube Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="youtube" className="block mb-1 text-sm md:text-base font-normal">Youtube</label>
+                                <label htmlFor="youtube" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Youtube</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <TiSocialYoutubeCircular className='text-gray-500 text-2xl' />
@@ -147,7 +147,7 @@ const SocialMedia = () => {
 
                             {/* Yelp Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="yelp" className="block mb-1 text-sm md:text-base font-normal">Yelp</label>
+                                <label htmlFor="yelp" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Yelp</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <LiaYelp className='text-gray-500 text-2xl' />
@@ -164,7 +164,7 @@ const SocialMedia = () => {
 
                             {/* Tiktok Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="tiktok" className="block mb-1 text-sm md:text-base font-normal">Tiktok</label>
+                                <label htmlFor="tiktok" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Tiktok</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <BiLogoTiktok className='text-gray-500 text-xl' />
@@ -181,7 +181,7 @@ const SocialMedia = () => {
 
                             {/* Nextdoor Field */}
                             <div className="mb-4 relative">
-                                <label htmlFor="nextdoor" className="block mb-1 text-sm md:text-base font-normal">Nextdoor</label>
+                                <label htmlFor="nextdoor" className="block mb-1 ml-2 text-xs md:text-sm font-medium">Nextdoor</label>
                                 <div className="flex items-center border border-gray-300">
                                     <div className='border-r p-2'>
                                         <SiNextdotjs className='text-gray-500 text-xl' />
