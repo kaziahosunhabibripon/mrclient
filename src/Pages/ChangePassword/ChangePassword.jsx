@@ -35,7 +35,7 @@ const ChangePassword = () => {
                 <div className='shadow'>
 
                     <div className='bg-[#1C91E4] px-5 py-4'>
-                        <h4 className='text-white font-semibold'>Change Password</h4>
+                        <h4 className='text-white font-medium'>Change Password</h4>
                     </div>
 
                     <p className='text-xs text-center mt-6'>8 characters or longer. Combine upper and lowercase letters, numbers, and special characters.</p>

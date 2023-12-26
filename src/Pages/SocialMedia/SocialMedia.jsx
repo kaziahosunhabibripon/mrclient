@@ -20,7 +20,7 @@ const SocialMedia = () => {
             <Container>
                 <div className='shadow'>
                     <div className='bg-[#1C91E4] px-5 py-4'>
-                        <h4 className='text-white font-semibold'>Social Media Links</h4>
+                        <h4 className='text-white font-medium'>Social Media Links</h4>
                     </div>
 
                     <div className='p-5'>
