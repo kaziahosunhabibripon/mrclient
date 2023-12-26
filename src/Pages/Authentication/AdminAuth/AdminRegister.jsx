@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useForm } from 'react-hook-form';
+import UserImg from '../../../assets/user.png';
 
 const AdminRegister = () => {
     const {
@@ -7,6 +8,8 @@ const AdminRegister = () => {
         handleSubmit,
         formState: { errors },
     } = useForm();
+
+    const fileRef = useRef(null);
 
     const onSubmit = (data) => {
         // Handle form submission with the form data
@@ -18,10 +21,9 @@ const AdminRegister = () => {
 
             <h2 className="text-2xl text-center font-bold mt-5">Admin Register</h2>
 
-            <div className="flex justify-center items-center mt-5">
+            {/* <div className="flex justify-center items-center mt-5">
                 <label htmlFor="imageInput" className="cursor-pointer">
                     <div className="w-32 h-32 rounded-full overflow-hidden border">
-                        {/* Placeholder for the image input */}
                         <input
                             type="file"
                             id="imageInput"
@@ -31,8 +33,28 @@ const AdminRegister = () => {
                         />
                     </div>
                 </label>
-            </div>
+            </div> */}
             <form onSubmit={handleSubmit(onSubmit)}>
+
+                {/* <div className="flex justify-center items-center mt-5">
+                    <label htmlFor="imageInput" className="cursor-pointer">
+                        <div className="w-32 h-32 rounded-full overflow-hidden border">
+                            <input
+                                type="file"
+                                id="imageInput"
+                                accept="image/*"
+                                {...register('image', { required: true })}
+                                className="w-full h-full opacity-0 cursor-pointer"
+                            />
+                        </div>
+                    </label>
+                </div> */}
+
+                <div className="flex justify-center items-center mt-5">
+                    <img onClick={() => fileRef.current.click()} src={UserImg} alt="profile" className='h=20 w-20 self-center cursor-pointer rounded-full object-cover' />
+                    <input type="file" hidden accept='image/*' ref={fileRef} />
+                </div>
+
                 <div className="mb-3">
                     <label htmlFor="name" className="block mb-2 font-semibold">
                         Name:
