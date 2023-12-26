@@ -7,6 +7,8 @@ import TermsConditions from "@/Pages/TermsConditions/TermsConditions";
 import About from "@/pages/About/About";
 import Cart from "@/pages/Cart/Cart";
 import Contact from "@/pages/Contact/Contact";
+import Categories from "@/pages/Dashboard/DashboardHome/Category/Categories";
+
 import Inbox from "@/pages/Inbox/Inbox";
 
 import { createBrowserRouter } from "react-router-dom";
@@ -40,12 +42,12 @@ const router = createBrowserRouter([
       // mehedi hasan added route
       {
         path: "/terms-conditions",
-        element: <TermsConditions />
+        element: <TermsConditions />,
       },
       {
         path: "/privacy-policy",
-        element: <PrivacyPolicy />
-      }
+        element: <PrivacyPolicy />,
+      },
     ],
   },
 
@@ -56,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/authentication",
         element: <Authentication />,
+      },
+      {
+        path: "/categories",
+        element: <Categories />,
       },
     ],
   },

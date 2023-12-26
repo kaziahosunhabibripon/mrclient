@@ -8,7 +8,7 @@ import { createUser } from "@/redux/features/users/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Register = () => {
-  const { email, name, isLoading } = useSelector((state) => state.userSlice);
+  const { email, name, isLoading } = useSelector(state => state.userSlice);
 
   console.log(email, name);
 
@@ -24,7 +24,7 @@ const Register = () => {
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
 
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     const { name, email, password } = data;
     dispatch(createUser({ email, password, name }));
   };
@@ -87,29 +87,30 @@ const Register = () => {
             <span className="text-red-500">This field is required</span>
           )}
         </div>
-
-        <Input
-          type="password"
-          {...register("password", {
-            required: "Password is required",
-            pattern: {
-              value: {
-                source: passwordRegex.source,
-                flags: passwordRegex.flags,
+        <div>
+          <Label>Password</Label>
+          <Input
+            type="password"
+            {...register("password", {
+              required: "Password is required",
+              pattern: {
+                value: {
+                  source: passwordRegex.source,
+                  flags: passwordRegex.flags,
+                },
+                message:
+                  "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.",
               },
-              message:
-                "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.",
-            },
-          })}
-        />
-
+            })}
+          />
+        </div>
         <div>
           <Label>Confirm Password</Label>
           <Input
             type="password"
             {...register("confirmPass", {
               required: "Confirmation password is required",
-              validate: (value) =>
+              validate: value =>
                 value === watch("password") || "Passwords do not match",
             })}
           />
@@ -124,7 +125,7 @@ const Register = () => {
       </form>
 
       <h1 className="text-center">
-        Already have an Account?{" "}
+        Already have an Account?
         <span className="text-blue-500 font-semibold">Sign In</span>
       </h1>
     </>
