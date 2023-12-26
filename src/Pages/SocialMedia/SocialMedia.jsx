@@ -16,7 +16,7 @@ const SocialMedia = () => {
     };
 
     return (
-        <div className='font-montserrat my-10 w-3/6 mx-auto'>
+        <div className='font-montserrat my-10 w-3/5 mx-auto'>
             <Container>
                 <div className='shadow'>
                     <div className='bg-[#1C91E4] px-5 py-4'>
