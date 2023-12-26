@@ -21,11 +21,12 @@ const initialState = {
 
 export const createUser = createAsyncThunk(
   "userSlice/createUser",
-  async ({ email, password, name }) => {
+  async ({ email, password, name, image }) => {
     const data = await createUserWithEmailAndPassword(auth, email, password);
 
     await updateProfile(auth.currentUser, {
       displayName: name,
+      photoURL: image
     });
 
     return {
