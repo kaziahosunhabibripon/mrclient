@@ -33,8 +33,8 @@ const AdminRegister = () => {
                 </label>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="mb-4">
-                    <label htmlFor="name" className="block mb-1 font-semibold">
+                <div className="mb-3">
+                    <label htmlFor="name" className="block mb-2 font-semibold">
                         Name:
                     </label>
                     <input
@@ -42,14 +42,14 @@ const AdminRegister = () => {
                         id="name"
                         placeholder="Enter your name"
                         {...register('name', { required: true })}
-                        className="border border-gray-300 px-3 py-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        className="border border-gray-300 px-3 py-2 w-full outline-none"
                     />
                     {errors.name && (
                         <span className="text-red-500 text-sm">This field is required</span>
                     )}
                 </div>
-                <div className="mb-4">
-                    <label htmlFor="phoneNumber" className="block mb-1 font-semibold">
+                <div className="mb-3">
+                    <label htmlFor="phoneNumber" className="block mb-2 font-semibold">
                         Phone Number:
                     </label>
                     <input
@@ -57,14 +57,14 @@ const AdminRegister = () => {
                         id="phoneNumber"
                         placeholder="Enter your phone number"
                         {...register('phoneNumber', { required: true })}
-                        className="border border-gray-300 px-3 py-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        className="border border-gray-300 px-3 py-2 w-full outline-none"
                     />
                     {errors.phoneNumber && (
                         <span className="text-red-500 text-sm">This field is required</span>
                     )}
                 </div>
-                <div className="mb-4">
-                    <label htmlFor="address" className="block mb-1 font-semibold">
+                <div className="mb-3">
+                    <label htmlFor="address" className="block mb-2 font-semibold">
                         Address:
                     </label>
                     <input
@@ -72,14 +72,14 @@ const AdminRegister = () => {
                         id="address"
                         placeholder="Enter your address"
                         {...register('address', { required: true })}
-                        className="border border-gray-300 px-3 py-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        className="border border-gray-300 px-3 py-2 w-full outline-none"
                     />
                     {errors.address && (
                         <span className="text-red-500 text-sm">This field is required</span>
                     )}
                 </div>
-                <div className="mb-4">
-                    <label htmlFor="email" className="block mb-1 font-semibold">
+                <div className="mb-3">
+                    <label htmlFor="email" className="block mb-2 font-semibold">
                         Email:
                     </label>
                     <input
@@ -87,14 +87,14 @@ const AdminRegister = () => {
                         id="email"
                         placeholder="Enter your email"
                         {...register('email', { required: true })}
-                        className="border border-gray-300 px-3 py-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        className="border border-gray-300 px-3 py-2 w-full outline-none"
                     />
                     {errors.email && (
                         <span className="text-red-500 text-sm">This field is required</span>
                     )}
                 </div>
-                <div className="mb-4">
-                    <label htmlFor="password" className="block mb-1 font-semibold">
+                <div className="mb-3">
+                    <label htmlFor="password" className="block mb-2 font-semibold">
                         Password:
                     </label>
                     <input
@@ -102,7 +102,7 @@ const AdminRegister = () => {
                         id="password"
                         placeholder="Enter your password"
                         {...register('password', { required: true })}
-                        className="border border-gray-300 px-3 py-2 rounded-md w-full focus:outline-none focus:border-blue-500"
+                        className="border border-gray-300 px-3 py-2 w-full outline-none"
                     />
                     {errors.password && (
                         <span className="text-red-500 text-sm">This field is required</span>
@@ -111,7 +111,7 @@ const AdminRegister = () => {
                 <div className="text-center">
                     <button
                         type="submit"
-                        className="bg-blue-500 w-full text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                        className="bg-blue-500 w-full text-white px-4 py-2 hover:bg-blue-600"
                     >
                         Sign Up
                     </button>
