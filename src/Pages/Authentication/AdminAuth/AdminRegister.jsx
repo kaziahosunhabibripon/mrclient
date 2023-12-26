@@ -58,7 +58,7 @@ const AdminRegister = () => {
 
         setImageURL("");
         reset();
-        toast.success('User created Successfully!')
+        toast.success('User created successfully!')
     };
 
     return (

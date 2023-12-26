@@ -1,16 +1,21 @@
+import { loginUser } from '@/redux/features/users/userSlice';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 
 const AdminLogin = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+    const dispatch = useDispatch();
 
     const onSubmit = (data) => {
         // Handle form submission with the form data
-        console.log(data);
+        const { email, password } = data;
+        dispatch(loginUser(email, password));
+
+        reset();
+        toast.success('User login successfully!')
     };
 
     return (
