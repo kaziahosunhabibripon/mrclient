@@ -1,5 +1,6 @@
 import Auth from "@/Layout/Auth";
 import Root from "@/Layout/Root";
+import AdminAuth from "@/Pages/Authentication/AdminAuth/AdminAuth";
 import Authentication from "@/Pages/Authentication/Authentication";
 import BillingAddress from "@/Pages/BillingAddress/BillingAddress";
 import ChangePassword from "@/Pages/ChangePassword/ChangePassword";
@@ -71,9 +72,15 @@ const router = createBrowserRouter([
       {
         path: "/authentication",
         element: <Authentication />,
-      },
+      }
     ],
   },
+
+  {
+
+    path: "/admin-auth",
+    element: <AdminAuth />
+  }
 ]);
 
 export default router;
