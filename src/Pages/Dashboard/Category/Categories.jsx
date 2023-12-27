@@ -22,6 +22,11 @@ const Categories = () => {
             <div className="gap-4 m-2  border-2">
               <BulletPoint />
             </div>
+            <div className="flex justify-center gap-4 m-2 ">
+              <button className="rounded-full bg-[#1C91E4] hover:bg-blue-700 text-white font-bold py-2 px-4">
+                CREATE
+              </button>
+            </div>
           </form>
         </div>
       </Container>

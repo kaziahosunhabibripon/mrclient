@@ -1,7 +1,8 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@radix-ui/react-menubar";
-import { Button } from "@/components/ui/button";
+
+import { RxCross1 } from "react-icons/rx";
 const BulletPoint = () => {
   return (
     <Card className="w-full rounded-none">
@@ -13,12 +14,28 @@ const BulletPoint = () => {
           Subcategory
         </Label>
       </div>
-      <CardContent className="flex justify-evenly gap-4  items-center bg-[#F2F9FF]">
-        <button className="mt-5 text-gray-700 bg-white">
-          Unlimited Revisions
-        </button>
-        <button className="mt-5 text-gray-500 bg-white">PSD Source File</button>
-        <button className="mt-5 text-gray-500 bg-white">Print Ready PDF</button>
+      <CardContent className="flex justify-evenly  font-montserrat font-medium  items-center bg-[#F2F9FF]">
+        <div className="flex items-center">
+          <button className="mt-5 px-2 py-1 text-gray-900 bg-white border-2 border-gray-200 flex items-center">
+            Unlimited Revisions
+            <span className="ml-2 text-red-600">
+              <RxCross1 />
+            </span>
+          </button>
+        </div>
+        <div className="flex items-center">
+          <button className="mt-5 px-2 py-1 text-gray-900 bg-white border-2 border-gray-200 flex items-center">
+            PSD Source File
+            <span className="ml-2 text-red-600">
+              <RxCross1 />
+            </span>
+          </button>
+        </div>
+        <div className="flex items-center">
+          <button className="mt-5 px-2 py-1 text-gray-900  flex items-center">
+            Print Ready PDF
+          </button>
+        </div>
       </CardContent>
     </Card>
   );
