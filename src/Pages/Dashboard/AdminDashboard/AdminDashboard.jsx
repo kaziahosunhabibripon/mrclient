@@ -232,22 +232,10 @@ const AdminDashboard = () => {
                 </select>
               </div>
 
-              {/* Select All Times Option */}
-              <select className='border text-sm font-medium outline-none' value={customers} onChange={handleCustomersChange}>
-                <option value="Today">Today</option>
-                <option value="Last 7 Days">Last 7 Days</option>
-                <option value="This Month">This Month</option>
-                <option value="Last Month">Last Month</option>
-                <option value="Last 3 Months">Last 3 Months</option>
-                <option value="This Year">This Year</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="All Times">All Times</option>
-              </select>
-            </div>
-
-            <div>
-              Customers
+              <div>
+                Customer
+              </div>
+              
             </div>
           </div>
 
