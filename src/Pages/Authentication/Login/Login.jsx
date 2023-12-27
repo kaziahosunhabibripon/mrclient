@@ -2,19 +2,40 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-menubar";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { loginUser } from "@/redux/features/users/userSlice";
 
 const Login = () => {
+  const { email, name, isLoading } = useSelector((state) => state.userSlice);
+  console.log(email)
+  const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onsubmit = (data) => {
+    const { email, password } = data;
+    console.log(email, password)
+    dispatch(loginUser({ email, password }));
+  };
+
   return (
     <>
-      <form className="py-10 flex flex-col gap-5">
+      <form
+        onSubmit={handleSubmit(onsubmit)}
+        className="py-10 flex flex-col gap-5"
+      >
         <div>
           <Label>Email</Label>
-          <Input />
+          <Input {...register("email", { required: true })} type="email" />
         </div>
         <div>
           <Label>Password</Label>
-          <Input />
+          <Input type="password" {...register("password", { required: true })} />
         </div>
 
         <div className="flex items-center justify-between">
@@ -25,7 +46,7 @@ const Login = () => {
           <span className="text-blue-500">Forgot password?</span>
         </div>
 
-        <Button className="w-full bg-blue-500 hover:bg-blue-600">
+        <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-600">
           Sign In
         </Button>
       </form>

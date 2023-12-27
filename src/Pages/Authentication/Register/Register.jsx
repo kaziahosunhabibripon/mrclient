@@ -10,8 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 const Register = () => {
   const { email, name, isLoading } = useSelector((state) => state.userSlice);
 
-  console.log(email, name);
-
   const dispatch = useDispatch();
 
   const {
