@@ -10,35 +10,19 @@ import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-
-    const { email } = useSelector((state) => state.userSlice);
-    console.log(email);
-    const { data: AdminUserData, isLoading } = useGetAdminUserByEmailQuery(email);
     const navigate = useNavigate();
-
-    console.log(email);
-    console.log(AdminUserData?.data);
 
     const dispatch = useDispatch();
 
     const onSubmit = (data) => {
         // Handle form submission with the form data
         const { email, password } = data;
-        dispatch(loginUser(email, password));
-
+        dispatch(loginUser({email, password}));
         reset();
         toast.success('User login successfully!')
 
-        // // navigate dashboard
-        // if (AdminUserData?.data?.role === "admin" && AdminUserData?.data?.status === "active") {
-        //     return navigate('/admin-dashboard');
-        // }
+        navigate('/');
     };
-
-    const handleLogOut = () => {
-        signOut(auth);
-        dispatch(logout());
-    }
 
     return (
         <div className="max-w-md mx-auto bg-white">
@@ -83,8 +67,6 @@ const AdminLogin = () => {
                     </button>
                 </div>
             </form>
-
-            <button onClick={() => handleLogOut()}>Log OUt</button>
         </div>
     );
 };

@@ -8,6 +8,7 @@ import { createUser } from '@/redux/features/users/userSlice';
 import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { usePostAdminUserMutation } from '@/redux/features/adminUser/adminUserApi';
+import { useNavigate } from 'react-router-dom';
 
 const AdminRegister = () => {
     const [createAdminUser] = usePostAdminUserMutation();
@@ -16,6 +17,7 @@ const AdminRegister = () => {
     const [image, setImage] = useState(undefined);
     const [imageURL, setImageURL] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
 
     const dispatch = useDispatch();
 
@@ -54,14 +56,13 @@ const AdminRegister = () => {
 
         // Handle form submission with the form data
         dispatch(createUser({ email, password, name, image: imageURL }));
-
         const newUser = { name, email, password, image: imageURL, address, number: phoneNumber };
-        
         createAdminUser(newUser);
-
         setImageURL("");
         reset();
         toast.success('User created successfully!')
+
+        navigate('/');
     };
 
     return (
