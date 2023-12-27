@@ -4,6 +4,7 @@ import AdminAuth from "@/Pages/Authentication/AdminAuth/AdminAuth";
 import Authentication from "@/Pages/Authentication/Authentication";
 import BillingAddress from "@/Pages/BillingAddress/BillingAddress";
 import ChangePassword from "@/Pages/ChangePassword/ChangePassword";
+import AdminDashboard from "@/Pages/Dashboard/AdminDashboard/AdminDashboard";
 import Home from "@/Pages/Home/Home";
 import PrivacyPolicy from "@/Pages/PrivacyPolicy/PrivacyPolicy";
 import SocialMedia from "@/Pages/SocialMedia/SocialMedia";
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: "/change-password",
         element: <ChangePassword />,
+      },
+      {
+        path: "/admin-dashboard",
+        element: <AdminDashboard />
       },
       {
         path: "/categories",

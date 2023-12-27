@@ -1,11 +1,16 @@
+import { useGetAdminUserByEmailQuery } from '@/redux/features/adminUser/adminUserApi';
 import { loginUser } from '@/redux/features/users/userSlice';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const AdminLogin = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const { email } = useSelector((state) => state.userSlice);
+    const {data: AdminUserData, isLoading} = useGetAdminUserByEmailQuery();
+
+    console.log(email);
 
     const dispatch = useDispatch();
 

@@ -22,6 +22,7 @@ module.exports = {
         garamond: ["Garamond"],
       },
       colors: {
+        webPrimary: '#1C91E4',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
