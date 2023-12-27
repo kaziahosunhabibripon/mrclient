@@ -29,7 +29,7 @@ const HeaderBottom = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/docs">
+              <Link href="/dashboard/dashboard-home">
                 <NavigationMenuLink className="bg-transparent text-white p-2">
                   Dashboard
                 </NavigationMenuLink>

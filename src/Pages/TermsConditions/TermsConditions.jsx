@@ -48,23 +48,23 @@ const TermsConditions = () => {
 
               <ol className="ml-5 mb-5">
                 <li>
-                  <span className="font-bold">01.</span> You can start by
+                  <span className="font-bold">1.</span> You can start by
                   clicking "Project" from the top bar or footer.
                 </li>
                 <li>
-                  <span className="font-bold">02.</span> You can start by
+                  <span className="font-bold">2.</span> You can start by
                   clicking "Start Project" from the Price List page, or Design
                   Description page.
                 </li>
                 <li>
-                  <span className="font-bold">04.</span> You can first collect
+                  <span className="font-bold">3.</span> You can first collect
                   your favorite designs in the cart list then you can start the
                   project for your favorite designs from the cart list. (You can
                   start a project from a cart list for one design, or you can
                   start a project from a cart list for multiple designs.)
                 </li>
                 <li>
-                  <span className="font-bold">04.</span> You can start the
+                  <span className="font-bold">4.</span> You can start the
                   project through a custom offer from the inbox.
                 </li>
               </ol>

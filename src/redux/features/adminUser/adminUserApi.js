@@ -10,7 +10,19 @@ const adminUserApi = baseApi.injectEndpoints({
       query: (id) => `/adminUsers/${id}`,
       providesTags: ["Base"],
     }),
+    getAdminUserByEmail: builder.query({
+      query: (email) => `/adminUsers/${email}`,
+      providesTags: ["Base"]
+    }),
+    postAdminUser: builder.mutation({
+      query: (data) => ({
+        url: "/adminUsers",
+        method: "POST",
+        body: data
+      }),
+      invalidatesTags: ["Base"]
+    })
   }),
 });
 
-export const { useGetAminUsersQuery, useGetAdminUserByIdQuery } = adminUserApi;
+export const { useGetAminUsersQuery, useGetAdminUserByIdQuery, usePostAdminUserMutation, useGetAdminUserByEmailQuery } = adminUserApi;

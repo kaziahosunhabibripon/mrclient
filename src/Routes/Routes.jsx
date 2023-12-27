@@ -1,12 +1,19 @@
 import Auth from "@/Layout/Auth";
 import Root from "@/Layout/Root";
+import AdminAuth from "@/Pages/Authentication/AdminAuth/AdminAuth";
 import Authentication from "@/Pages/Authentication/Authentication";
+import BillingAddress from "@/Pages/BillingAddress/BillingAddress";
+import ChangePassword from "@/Pages/ChangePassword/ChangePassword";
+import AdminDashboard from "@/Pages/Dashboard/AdminDashboard/AdminDashboard";
 import Home from "@/Pages/Home/Home";
 import PrivacyPolicy from "@/Pages/PrivacyPolicy/PrivacyPolicy";
+import SocialMedia from "@/Pages/SocialMedia/SocialMedia";
 import TermsConditions from "@/Pages/TermsConditions/TermsConditions";
 import About from "@/pages/About/About";
 import Cart from "@/pages/Cart/Cart";
 import Contact from "@/pages/Contact/Contact";
+import Categories from "@/pages/Dashboard/Category/Categories";
+
 import Inbox from "@/pages/Inbox/Inbox";
 
 import { createBrowserRouter } from "react-router-dom";
@@ -40,12 +47,32 @@ const router = createBrowserRouter([
       // mehedi hasan added route
       {
         path: "/terms-conditions",
-        element: <TermsConditions />
+        element: <TermsConditions />,
       },
       {
         path: "/privacy-policy",
-        element: <PrivacyPolicy />
-      }
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "/billing-address",
+        element: <BillingAddress />,
+      },
+      {
+        path: "/social-media",
+        element: <SocialMedia />,
+      },
+      {
+        path: "/change-password",
+        element: <ChangePassword />,
+      },
+      {
+        path: "/admin-dashboard",
+        element: <AdminDashboard />
+      },
+      {
+        path: "/categories",
+        element: <Categories />,
+      },
     ],
   },
 
@@ -58,6 +85,12 @@ const router = createBrowserRouter([
         element: <Authentication />,
       },
     ],
+  },
+
+  {
+    path: "/admin-auth",
+    element: <AdminAuth />,
+    children: [],
   },
 ]);
 
