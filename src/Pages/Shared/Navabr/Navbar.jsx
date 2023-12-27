@@ -2,7 +2,7 @@ import React from "react";
 import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import { TiShoppingCart } from "react-icons/ti";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetAdminUserByEmailQuery } from "@/redux/features/adminUser/adminUserApi";
 import {
   Avatar,
@@ -13,18 +13,24 @@ import {
 import {
   MenubarContent,
   MenubarItem,
-  MenubarRadioGroup,
-  MenubarRadioItem,
   MenubarSeparator
 } from "@/components/ui/menubar"
+import { signOut } from "firebase/auth";
+import { auth } from "@/firebase/firebase.config";
+import { logout } from "@/redux/features/users/userSlice";
 
 const Navbar = () => {
 
   const { email } = useSelector((state) => state.userSlice);
-  console.log(email);
   const { data: AdminUserData, isLoading } = useGetAdminUserByEmailQuery({ email });
 
-  console.log(AdminUserData);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    signOut(auth)
+    dispatch(logout());
+    alert("You have been logged out");
+  };
 
   return (
     <Menubar className="bg-black font-montserrat border-none outline-none text-white">
@@ -73,7 +79,7 @@ const Navbar = () => {
               </MenubarItem>
               <MenubarSeparator />
               <MenubarItem inset>
-                <Link to={"/admin-dashboard"}>Log Out</Link>
+                <Link onClick={handleLogout}>Log Out</Link>
               </MenubarItem>
             </MenubarContent>
           </MenubarMenu> :
