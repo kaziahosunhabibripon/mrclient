@@ -6,7 +6,7 @@ import Login from "./Login/Login";
 
 const Authentication = () => {
   return (
-    <div className="flex justify-center my-24">
+    <div className="flex justify-center my-10">
       <Tabs defaultValue="account" className="w-[500px]">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="account">Sign Up</TabsTrigger>

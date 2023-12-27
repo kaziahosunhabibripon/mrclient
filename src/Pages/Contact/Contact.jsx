@@ -19,7 +19,7 @@ const Contact = () => {
       <div className="w-1/2">
         <Card className="w-full">
           <CardContent className="space-y-2 bg-[#FFEFEF]">
-            <form className="py-4 flex flex-col gap-4 ">
+            <form className="py-4 flex flex-col gap-4">
               <div>
                 <Input className="rounded-none" placeholder="Name" />
               </div>
