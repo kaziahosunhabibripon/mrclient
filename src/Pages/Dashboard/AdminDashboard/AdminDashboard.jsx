@@ -1,5 +1,6 @@
 import Container from '@/Pages/Shared/Container';
-import React, { useState } from 'react';
+import OrderItemCard from '@/components/Dashboard/OrderItemCard/OrderItemCard';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 
 const AdminDashboard = () => {
@@ -8,6 +9,16 @@ const AdminDashboard = () => {
     const [searchInput, setSearchInput] = useState('');
     const [visitors, setVisitors] = useState('Today');
     const [customers, setCustomers] = useState('Today');
+
+    // ======================>
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('admindashboard.json')
+            .then(res => res.json())
+            .then(resData => setData(resData))
+    }, [])
+    // ======================>
 
     // Function to handle active projects select change
     const handleActiveProjectsChange = (event) => {
@@ -64,6 +75,14 @@ const AdminDashboard = () => {
                             </select>
                         </div>
                         {/* Search Bar End */}
+
+                        <div className='my-5'>
+                            {
+                                data.map((singleData, idx) => (
+                                    <OrderItemCard key={idx} data={singleData} />
+                                ))
+                            }
+                        </div>
                     </div>
                     <div>
                         <div className='bg-[#F2F9FF] p-5'>
@@ -190,7 +209,7 @@ const AdminDashboard = () => {
                             </div>
 
                             <div>
-                            Customers
+                                Customers
                             </div>
                         </div>
                     </div>
