@@ -1,16 +1,23 @@
+import { auth } from '@/firebase/firebase.config';
 import { useGetAdminUserByEmailQuery } from '@/redux/features/adminUser/adminUserApi';
-import { loginUser } from '@/redux/features/users/userSlice';
+import { loginUser, logout } from '@/redux/features/users/userSlice';
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
     const { email } = useSelector((state) => state.userSlice);
-    const {data: AdminUserData, isLoading} = useGetAdminUserByEmailQuery();
+    console.log(email);
+    const { data: AdminUserData, isLoading } = useGetAdminUserByEmailQuery(email);
+    const navigate = useNavigate();
 
     console.log(email);
+    console.log(AdminUserData?.data);
 
     const dispatch = useDispatch();
 
@@ -21,7 +28,17 @@ const AdminLogin = () => {
 
         reset();
         toast.success('User login successfully!')
+
+        // // navigate dashboard
+        // if (AdminUserData?.data?.role === "admin" && AdminUserData?.data?.status === "active") {
+        //     return navigate('/admin-dashboard');
+        // }
     };
+
+    const handleLogOut = () => {
+        signOut(auth);
+        dispatch(logout());
+    }
 
     return (
         <div className="max-w-md mx-auto bg-white">
@@ -66,6 +83,8 @@ const AdminLogin = () => {
                     </button>
                 </div>
             </form>
+
+            <button onClick={() => handleLogOut()}>Log OUt</button>
         </div>
     );
 };
