@@ -3,7 +3,7 @@ import baseApi from "../baseApi/baseApi";
 const adminUserApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getAminUsers: builder.query({
-      query: () => "/adminUsers",
+      query: () => "/adminUsers/all",
       providesTags: ["Base"],
     }),
     getAdminUserByEmail: builder.query({
@@ -23,6 +23,6 @@ const adminUserApi = baseApi.injectEndpoints({
 
 export const {
   useGetAminUsersQuery,
-  usePostAdminUserMutation,
   useGetAdminUserByEmailQuery,
+  usePostAdminUserMutation,
 } = adminUserApi;

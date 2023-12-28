@@ -24,7 +24,7 @@ const AdminLogin = () => {
     const onSubmit = (data) => {
         // Handle form submission with the form data
         const { email, password } = data;
-        dispatch(loginUser(email, password));
+        dispatch(loginUser({email, password}));
 
         reset();
         toast.success('User login successfully!')
@@ -34,11 +34,6 @@ const AdminLogin = () => {
         //     return navigate('/admin-dashboard');
         // }
     };
-
-    const handleLogOut = () => {
-        signOut(auth);
-        dispatch(logout());
-    }
 
     return (
         <div className="max-w-md mx-auto bg-white">
@@ -83,8 +78,6 @@ const AdminLogin = () => {
                     </button>
                 </div>
             </form>
-
-            <button onClick={() => handleLogOut()}>Log OUt</button>
         </div>
     );
 };
