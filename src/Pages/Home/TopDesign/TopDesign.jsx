@@ -1,11 +1,26 @@
 import DesignCard from '@/components/TopDesign/DesignCard/DesignCard';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const TopDesign = ({ portfolioData }) => {
+const TopDesign = () => {
+
+    const [portfolioData, setPortfolioData] = useState([]);
+
+    useEffect(() => {
+        fetch('portfolio.json')
+            .then(res => res.json())
+            .then(data => {
+                const topFive = data.slice(0, 5); // Extracts the top 5 items
+                setPortfolioData(topFive);
+            });
+    }, []);
 
     return (
         <div>
-            <DesignCard portfolioData={portfolioData[0]} />
+            {
+                portfolioData.map((singlePortfolioData, _idx) => (
+                    <DesignCard key={_idx} singlePortfolioData={singlePortfolioData} />
+                ))
+            }
         </div>
     );
 };
