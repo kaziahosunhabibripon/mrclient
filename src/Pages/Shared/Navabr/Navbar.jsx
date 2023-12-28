@@ -32,6 +32,8 @@ const Navbar = () => {
     alert("You have been logged out");
   };
 
+  console.log(AdminUserData);
+
   return (
     <Menubar className="bg-black font-montserrat border-none outline-none text-white">
       <MenubarMenu>
@@ -59,9 +61,9 @@ const Navbar = () => {
           <Link to={"/contact"}>Contact</Link>
         </MenubarTrigger>
       </MenubarMenu>
-
+      {/* role === "admin" && status === "active" */}
       {
-        AdminUserData ?
+        AdminUserData && AdminUserData?.role === "admin" && AdminUserData?.status === "active" ?
           <MenubarMenu>
             <MenubarTrigger>
               <Avatar>
