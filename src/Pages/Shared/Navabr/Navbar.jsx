@@ -63,7 +63,7 @@ const Navbar = () => {
       </MenubarMenu>
       {/* role === "admin" && status === "active" */}
       {
-        AdminUserData && AdminUserData?.role === "admin" && AdminUserData?.status === "active" ?
+        AdminUserData && AdminUserData?.data?.role === "admin" && AdminUserData?.data?.status === "active" ?
           <MenubarMenu>
             <MenubarTrigger>
               <Avatar>
