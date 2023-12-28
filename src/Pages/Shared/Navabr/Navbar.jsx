@@ -30,6 +30,8 @@ const Navbar = () => {
     alert("You have been logged out");
   };
 
+  console.log(AdminUserData);
+
   return (
     <Menubar className="bg-black font-montserrat border-none outline-none text-white">
       <MenubarMenu>
