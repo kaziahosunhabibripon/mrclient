@@ -14,8 +14,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const HeaderBottom = () => {
-  const { email } = useSelector((state) => state.userSlice);
-  console.log(email)
+
   return (
     <div className="flex items-center p-4 font-montserrat bg-[#1B8CDC]">
       <Container className="text-white">

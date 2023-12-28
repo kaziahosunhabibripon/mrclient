@@ -16,7 +16,7 @@ const Hero = () => {
         <img
           src={Banner}
           alt="Your Alt Text"
-          className="w-full rounded-lg shadow-lg"
+          className="w-full rounded-lg"
         />
       </div>
     </div>
