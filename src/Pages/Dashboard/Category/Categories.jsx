@@ -1,6 +1,4 @@
-import Container from "@/pages/Shared/Container";
 import React, { useState } from "react";
-
 import { Label } from "@radix-ui/react-menubar";
 import Creatable from "react-select/creatable";
 import { useForm } from "react-hook-form";
@@ -8,6 +6,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { RxCross1 } from "react-icons/rx";
 import { Input } from "@/components/ui/input";
 import { FaPlus } from "react-icons/fa";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+import { app } from "@/firebase/firebase.config";
+import { useGetAdminUserByEmailQuery } from "@/redux/features/adminUser/adminUserApi";
 
 const options = [
   {
@@ -17,6 +23,10 @@ const options = [
   { value: "Flayer Design", label: "Flayer Design" },
 ];
 const Categories = () => {
+  const { data: email, isLoading } = useGetAdminUserByEmailQuery(
+    "johndoe@example.com"
+  );
+  console.log(email);
   const [formValues, setFormValues] = useState({});
   const [selectedOption, setSelectedOption] = useState(null);
   const {
@@ -28,13 +38,64 @@ const Categories = () => {
   const onSubmit = data => {
     const formData = {
       ...data,
+
       selectedOption,
       showRevisions,
       showPSD,
       showPrintPDF,
     };
     setFormValues(formData);
+    const image = data.image[0];
+    const storage = getStorage(app);
+    const fileName = new Date().getTime() + image.name;
+    const storageRef = ref(storage, fileName);
+    const uploadTask = uploadBytesResumable(storageRef, image);
+    uploadTask.on(
+      "state_changed",
+      snapshot => {
+        const progress =
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+      },
+      error => {
+        console.error(error);
+      },
+      () => {
+        // When the upload is complete, get the image URL.
+        getDownloadURL(uploadTask.snapshot.ref)
+          .then(async imageUrl => {
+            const newCategories = {
+              ...formData,
 
+              image: imageUrl,
+            };
+            try {
+              const res = await fetch("http://localhost:5000/api/categories", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData), // Sending the prepared form data to the backend
+              });
+
+              // Check the response from the backend
+              if (res.ok) {
+                console.log("Data successfully sent to the backend!");
+                // Further actions if the submission is successful
+              } else {
+                console.error("Failed to send data to the backend!");
+                // Handle the error if the submission fails
+              }
+            } catch (error) {
+              console.error("Error sending data to the backend:", error);
+              // Handle network errors or exceptions during the submission
+            }
+          })
+          .catch(error => {
+            console.error("Error getting download URL:", error);
+          });
+      }
+    );
     console.log("Form data:", formData);
   };
 
@@ -67,9 +128,10 @@ const Categories = () => {
       setSelectedOption(newValue);
     }
   };
+
   return (
     <div className="my-10 px-4">
-      <Container>
+      <div>
         <div className="flex items-center justify-center my-6 w-full">
           <form
             onSubmit={handleSubmit(onSubmit)}
@@ -104,20 +166,16 @@ const Categories = () => {
                     Image
                   </label>
                 </div>
-                <div className="flex">
-                  <label
-                    htmlFor="image"
-                    className="py-2 px-3 bg-[#0c0d0fb4] text-md font-medium text-white cursor-pointer"
-                  >
-                    CHOOSE FILE
-                  </label>
+
+                <div className="bg-[#F2F9FF] border-2">
                   <input
                     id="image"
                     name="image"
                     type="file"
-                    className="hidden"
+                    className="bg-[#F2F9FF] text-gray-900"
                     placeholder="Select image"
                     {...register("image", { required: true })}
+                    accept="image/*"
                   />
                 </div>
               </div>
@@ -148,7 +206,7 @@ const Categories = () => {
                     </div>
                     <div>
                       <Input
-                        type="text"
+                        type="number"
                         id="amount"
                         className="rounded-none font-normal focus:ring-2 focus:ring-blue ring-transparent"
                         placeholder="Subcategory Amount"
@@ -246,7 +304,7 @@ const Categories = () => {
             </div>
           </form>
         </div>
-      </Container>
+      </div>
     </div>
   );
 };
