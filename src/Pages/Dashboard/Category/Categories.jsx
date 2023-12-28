@@ -14,7 +14,7 @@ import {
 } from "firebase/storage";
 import { app } from "@/firebase/firebase.config";
 import { useGetAdminUserByEmailQuery } from "@/redux/features/adminUser/adminUserApi";
-
+import { useDispatch, useSelector } from "react-redux";
 const options = [
   {
     value: "Door Hanger Design",
@@ -23,10 +23,12 @@ const options = [
   { value: "Flayer Design", label: "Flayer Design" },
 ];
 const Categories = () => {
-  const { data: email, isLoading } = useGetAdminUserByEmailQuery(
-    "johndoe@example.com"
-  );
-  console.log(email);
+  const { email } = useSelector(state => state.userSlice);
+  const { data: AdminUserData, isLoading } = useGetAdminUserByEmailQuery({
+    email,
+  });
+  // console.log(AdminUserData);
+  const dispatch = useDispatch();
   const [formValues, setFormValues] = useState({});
   const [selectedOption, setSelectedOption] = useState(null);
   const {
@@ -44,7 +46,7 @@ const Categories = () => {
       showPSD,
       showPrintPDF,
     };
-    setFormValues(formData);
+
     const image = data.image[0];
     const storage = getStorage(app);
     const fileName = new Date().getTime() + image.name;
@@ -65,37 +67,38 @@ const Categories = () => {
         getDownloadURL(uploadTask.snapshot.ref)
           .then(async imageUrl => {
             const newCategories = {
-              ...formData,
-
+              title: selectedOption?.label,
+              adminUserId: AdminUserData?.data?.id,
               image: imageUrl,
-            };
-            try {
-              const res = await fetch("http://localhost:5000/api/categories", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
+              SubCategory: [
+                {
+                  title: formData?.subcategory,
+                  amount: parseFloat(formData?.amount),
+                  deleveryTime: formData?.deliveryTimes,
+                  FastDelivery: [
+                    {
+                      amount: parseFloat(formData?.fdAmount),
+                      deleveryTime: formData?.firstDeliveryDays,
+                    },
+                  ],
+                  bulletPoint: [
+                    {
+                      itemOne: formData?.showPSD,
+                      itemTwo: formData?.showPrintPDF,
+                      itemThree: formData?.showRevisions,
+                    },
+                  ],
                 },
-                body: JSON.stringify(formData), // Sending the prepared form data to the backend
-              });
-
-              // Check the response from the backend
-              if (res.ok) {
-                console.log("Data successfully sent to the backend!");
-                // Further actions if the submission is successful
-              } else {
-                console.error("Failed to send data to the backend!");
-                // Handle the error if the submission fails
-              }
-            } catch (error) {
-              console.error("Error sending data to the backend:", error);
-              // Handle network errors or exceptions during the submission
-            }
+              ],
+            };
+            console.log(newCategories);
           })
           .catch(error => {
             console.error("Error getting download URL:", error);
           });
       }
     );
+    setFormValues(formData);
     console.log("Form data:", formData);
   };
 
