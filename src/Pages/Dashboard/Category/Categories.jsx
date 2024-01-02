@@ -14,6 +14,7 @@ import {
 } from "firebase/storage";
 import { app } from "@/firebase/firebase.config";
 import { useGetAdminUserByEmailQuery } from "@/redux/features/adminUser/adminUserApi";
+import { useSelector } from "react-redux";
 
 const options = [
   {
@@ -23,10 +24,8 @@ const options = [
   { value: "Flayer Design", label: "Flayer Design" },
 ];
 const Categories = () => {
-  const { data: email, isLoading } = useGetAdminUserByEmailQuery(
-    "johndoe@example.com"
-  );
-  console.log(email);
+  const { email: adminEmail } = useSelector((state) => state.userSlice);
+  const { data: email, isLoading } = useGetAdminUserByEmailQuery(adminEmail);
   const [formValues, setFormValues] = useState({});
   const [selectedOption, setSelectedOption] = useState(null);
   const {
@@ -35,7 +34,7 @@ const Categories = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     const formData = {
       ...data,
 
@@ -52,18 +51,18 @@ const Categories = () => {
     const uploadTask = uploadBytesResumable(storageRef, image);
     uploadTask.on(
       "state_changed",
-      snapshot => {
+      (snapshot) => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log("Upload is " + progress + "% done");
       },
-      error => {
+      (error) => {
         console.error(error);
       },
       () => {
         // When the upload is complete, get the image URL.
         getDownloadURL(uploadTask.snapshot.ref)
-          .then(async imageUrl => {
+          .then(async (imageUrl) => {
             const newCategories = {
               ...formData,
 
@@ -91,7 +90,7 @@ const Categories = () => {
               // Handle network errors or exceptions during the submission
             }
           })
-          .catch(error => {
+          .catch((error) => {
             console.error("Error getting download URL:", error);
           });
       }

@@ -5,10 +5,9 @@ import React from "react";
 import Creatable from "react-select/creatable";
 import { useForm } from "react-hook-form";
 import { createUser } from "@/redux/features/users/userSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Register = () => {
-  const { email, name, isLoading } = useSelector(state => state.userSlice);
 
   const dispatch = useDispatch();
 

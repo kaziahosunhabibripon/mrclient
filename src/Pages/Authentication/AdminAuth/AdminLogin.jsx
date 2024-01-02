@@ -1,11 +1,9 @@
-import { auth } from "@/firebase/firebase.config";
-import { useGetAdminUserByEmailQuery } from "@/redux/features/adminUser/adminUserApi";
-import { loginUser, logout } from "@/redux/features/users/userSlice";
-import { signOut } from "firebase/auth";
+
+import { loginUser} from "@/redux/features/users/userSlice";
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
